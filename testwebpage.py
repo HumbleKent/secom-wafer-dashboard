@@ -7,8 +7,8 @@ st.title("📊 Real-Time Wafer Quality Analytics")
 @st.cache_data # This keeps the website fast
 def load_data():
     # SECOM data is space-separated
-    df = pd.read_csv("secom.data", sep=r"\s+", header=None)
-    labels = pd.read_csv("secom_labels.data", sep=r"\s+", header=None, names=["Result", "Timestamp"])
+    df = pd.read_csv("secom/secom.data", sep=r"\s+", header=None)
+    labels = pd.read_csv("secom/secom_labels.data", sep=r"\s+", header=None, names=["Result", "Timestamp"])
     df['Result'] = labels['Result']
     return df
 
